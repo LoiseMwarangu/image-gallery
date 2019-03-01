@@ -1,21 +1,15 @@
-from django.shortcuts import render
 
-from django.http  import HttpResponse
+from django.http  import HttpResponse,Http404
 
 import datetime as dt
 
+from django.shortcuts import render,redirect
 
 # Create your views here.
 def welcome(request):
-    return HttpResponse('Welcome to my photo gallery')
-#..........
+    return render(request, 'welcome.html')
+
 def photo_date(request):
     date = dt.date.today()
-    html = f'''
-        <html>
-            <body>
-                <h1> {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+    return render(request, 'all-photos/recent.html', {"date": date,})
+
