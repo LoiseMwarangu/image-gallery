@@ -13,3 +13,4 @@ def photo_date(request):
     date = dt.date.today()
     return render(request, 'all-photos/recent.html', {"date": date,})
 
+
