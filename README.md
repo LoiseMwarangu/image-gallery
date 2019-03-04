@@ -20,7 +20,7 @@ Search for different categories of photos. (ie. Travel, Food)
 Copy a link to the photo to share with my friends.
 View photos based on the location they were taken.
 ###Behavior Driven Development
-input	output
+input -|-	output
 click view details	image details
 click link	image details on a new page
 search image by category. eg:adventure	view image details
