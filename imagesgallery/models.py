@@ -1,12 +1,33 @@
 from django.db import models
 
+class Location(models.Model):
+    location = models.CharField(max_length = 30)
+
+    def __str__(self):
+        return self.location
+    class Meta:
+        ordering = ['location']
+
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
+    @classmethod
+    def update_location(cls,id,location):
+        location = cls.objects.get(pk=id)
+        location = cls(location=location)
+        location.save()
+
+
 # Create your models here.
 class Editor(models.Model):
     first_name = models.CharField(max_length =30)
     last_name = models.CharField(max_length =30)
     email = models.EmailField()
     phone_number = models.CharField(max_length = 10,blank =True)
-    class Category(models.Model):
+class Category(models.Model):
     category = models.CharField(max_length = 30)
 
     def __str__(self):
@@ -27,6 +48,7 @@ class Editor(models.Model):
         category = cls(category=category)
         category.save()
 
+# adding image category
 # adding image class
 class Image(models.Model):
     image_name = models.CharField(max_length = 60)

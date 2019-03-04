@@ -17,7 +17,7 @@ def posted_photos(request):
     images = Image.all_images()
     return render(request, 'all-photos/index.html' , {"images":images})
   
-def search_results(request):
+def search(request):
 
     if 'photo' in request.GET and request.GET["photo"]:
         search_term = request.GET.get("photo")

@@ -1,9 +1,9 @@
 #IMAGE GALLERY
-An application that displays different photo categories
+An application that displays different categories of photos
 
 ##Setup/Installation Requirements
-Deployed Link:Github link :https://github.com/LoiseMwarangu/imagegallery.git
-
+Github link :https://github.com/LoiseMwarangu/imagegallery.git
+Live Link:
 ##Installing Dependencies
 pip3 install -r requirements.txt
 
@@ -11,12 +11,12 @@ pip3 install -r requirements.txt
 ./start.sh
 
 ##Administration details
-admin name:, admin password: 
+admin name:LoiseMwarangu, admin password:123456qwerty 
 
 ###User Stories
-View different photos that interest me.
+View different photos.
 Click on a single photo to expand it and also view the details of the photo. The photo details must appear on a modal within the same route as the main page.
-Search for different categories of photos. (ie. Travel, Food)
+Search for different categories of photos. 
 Copy a link to the photo to share with my friends.
 View photos based on the location they were taken.
 ###Behavior Driven Development
@@ -29,6 +29,6 @@ Python3.6
 Django
 HTML
 CSS
-Bootstrap
-Support and contact details
-{Run the web page once again incase of any errors, suggestions send an email: loisemwarangu@gmail.com} Copyright (c) {2019} {Loise Mwarangu}
+Bootstrap3
+###Support and contact details
+{Incase of any errors or for suggestions, send an email at: loisemwarangu@gmail.com} Copyright (c) {2019} {Loise Mwarangu}
