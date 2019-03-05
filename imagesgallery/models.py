@@ -48,7 +48,7 @@ class Image(models.Model):
     image_name = models.CharField(max_length = 60)
     description = models.TextField()
     location = models.ForeignKey(Location)
-    category = models.ManyToManyField(Category )
+    category = models.ForeignKey(Category )
     photo = models.ImageField(upload_to = 'index/')
 
     def __str__(self):
