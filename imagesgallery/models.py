@@ -22,11 +22,6 @@ class Location(models.Model):
 
 
 # Create your models here.
-class Editor(models.Model):
-    first_name = models.CharField(max_length =30)
-    last_name = models.CharField(max_length =30)
-    email = models.EmailField()
-    phone_number = models.CharField(max_length = 10,blank =True)
 class Category(models.Model):
     category = models.CharField(max_length = 30)
 
@@ -54,7 +49,7 @@ class Image(models.Model):
     image_name = models.CharField(max_length = 60)
     description = models.TextField()
     location = models.ForeignKey(Location)
-    category = models.ManyToManyField(Category)
+    category = models.ForeignKey(Category)
     photo = models.ImageField(upload_to = 'index/')
 
     def __str__(self):
@@ -90,8 +85,8 @@ class Image(models.Model):
 # search image 
     @classmethod
     def search_by_category(cls,search_term):
-        images = cls.objects.filter(category__category=search_term)
-        return images
+        result_search = cls.objects.filter(category_name__icontains=search_term)
+        return result_search
 
 
 

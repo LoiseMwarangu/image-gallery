@@ -5,7 +5,7 @@
         <div class="container">
         
           <!-- Looping through news   -->
-          {% for news_item in news %}
+          {% for image_item in imagesgallery %}
         
           <div class="row">
             <!-- displaying News articles -->
@@ -17,7 +17,7 @@
         
           {% empty %}
           <div class="row">
-            <h2 class="text-center">There are no photos available</h2>
+            <h2 class="text-center">No photos have been posted recently</h2>
           </div>
           {% endfor %}
         
