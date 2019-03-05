@@ -93,27 +93,7 @@ class Image(models.Model):
         images = cls.objects.filter(category__category=search_term)
         return images
 
-class Location(models.Model):
-    location = models.CharField(max_length = 30)
 
-    def __str__(self):
-        return self.location
-    class Meta:
-        ordering = ['location']
-
-    def save_location(self):
-        self.save()
-
-    def delete_location(self):
-        self.delete()
-
-    @classmethod
-    def update_location(cls,id,location):
-        location = cls.objects.get(pk=id)
-        location = cls(location=location)
-        location.save()
-
-# adding image category
 
 
     

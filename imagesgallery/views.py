@@ -1,4 +1,3 @@
-
 from django.http  import HttpResponse,Http404
 
 import datetime as dt
@@ -18,7 +17,6 @@ def posted_photos(request):
     return render(request, 'all-photos/index.html' , {"images":images})
   
 def search(request):
-
     if 'photo' in request.GET and request.GET["photo"]:
         search_term = request.GET.get("photo")
         searched_images = Image.search_by_category(search_term)
@@ -28,7 +26,6 @@ def search(request):
         message = "hate to break it to you but this category has no photos yet "
         return render(request, 'search.html',{"message":message})
     return render(request,"search.html")    
-
 
 def photo(request,image_id):
     try:
