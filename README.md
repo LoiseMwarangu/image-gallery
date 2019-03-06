@@ -11,7 +11,7 @@ pip3 install -r requirements.txt
 ./start.sh
 
 ## Administration details
-admin name:LoiseMwarangu, admin password:123456qwerty 
+admin name:loise_mwarangu, admin password:1234567890qwerty 
 
 ### User Stories
 View different photos.
