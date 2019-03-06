@@ -8,13 +8,9 @@ from django.shortcuts import render,redirect
 def welcome(request):
     return render(request, 'welcome.html')
 
-def photo_date(request):
-    date = dt.date.today()
-    return render(request, 'all-photos/recent.html', {"date": date,})
-
 def posted_photos(request):
     images = Image.all_images()
-    return render(request, 'all-photos/index.html' , {"images":images})
+    return render(request, 'index.html' , {"images":images})
   
 def search(request):
     if 'photo' in request.GET and request.GET["photo"]:
@@ -29,7 +25,7 @@ def search(request):
 
 def photo(request,image_id):
     try:
-        image = Image.objects.get(id = image_id)
+        image = Image.objects.get(id = id)
     except DoesNotExist:
         raise Http404()
     return render(request,"index.html",{"image":image})

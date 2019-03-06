@@ -6,8 +6,10 @@ from . import views
 
 urlpatterns=[
     url('^$',views.welcome,name = 'welcome'),
-    url('^recent/$',views.photo_date,name='photosToday'), 
     url(r'^search/$', views.search, name='search_results'),
+    url(r'^photo/$', views.posted_photos, name='photos_posted'),
+
+
 ]
 
 if settings.DEBUG:
