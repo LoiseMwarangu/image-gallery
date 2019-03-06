@@ -1,57 +1,30 @@
 {% extends 'base.html' %}
-
-{% block content %}
-<div class="container" id="display">
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-    <div id="homepage" style="text-align:center">
-        <br><br>
-        <h2 class="sub-title">"You are spoiled for choice"</h2>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-   
-
-    </div>
-
-<div class="container-fluid " id="photos">
-    <br>
-    <br>
-    <br>
-    <!-- loop through photos  -->
-    {% for image in photo %}
-    <!-- display articles -->
-    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-
-        <div class=" white">
-            <div class="card-image">
-                <img src="{{image.photos.url}}" class="img">
-                <a class="btn" href="">view details</a>
-                <p>Here is it{{image.description}}</p>
+<body>
+        {% block content %}
+        <div class="container" id="display">
+            <div id="homepage" style="text-align:center">
+                <h2 class="sub-title">"You are spoiled for choice"</h2>
+            <div class="row">
+            <!-- loop through photos  -->
+            {% for image in images %}
+            <div class="col-md-4">
+                        <img src="{{image.photo.url}}" class="img" style="height:400px; width:400px;">
+                      
+                    </div>
+             
+            {% endfor %}
             </div>
         </div>
-
-    </div>
-    {% endfor %}
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-</div>
-
-</div>
-
-</div>
-
-
-{% endblock %}
+        
+        </div>
+        
+        </div>
+        </div>
+        <style>
+            container-fluid{
+                margin: 3px;
+            }
+        </style>
+        
+        {% endblock %}   
+</body>
