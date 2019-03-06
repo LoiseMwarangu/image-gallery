@@ -1,20 +1,56 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          <h2 class="text-center"> {{ image_item.image_name }} </h2>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid" id="display">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <div id="homepage" style="text-align:center">
+        <br><br>
+        <h2 class="sub-title">"You are spoiled for choice"</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+   
+        <a href="#photos" class="button button-accent">View Photos</a>
+
+    </div>
+
+</div>
+<div class="container-fluid text-text white" id="photos">
+    <br>
+    <br>
+    <br>
+    <!-- loop through photos  -->
+    {% for image in images %}
+    <!-- display articles -->
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+        <div class=" white">
+            <div class="card-image">
+                <img src="{{image.photo.url}}" class="img">
+                <a class="btn" href="/image/{{image.id}}">view details</a>
+            </div>
         </div>
-    
-        <!--Display  uploaded images  -->
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          <img src="{{image_item.photo.url}}" class="img-responsive" alt="Image">
-        </div>        
-      </div>
-</body>
-</html>
+
+    </div>
+    {% endfor %}
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+
+</div>
+
+
+{% endblock %}
