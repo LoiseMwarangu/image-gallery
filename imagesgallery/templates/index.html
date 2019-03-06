@@ -19,11 +19,10 @@
         <br>
         <br>
    
-        <a href="#photos" class="button button-accent">View Photos</a>
 
     </div>
 
-<div class="container-fluid text-text white" id="photos">
+<div class="container-fluid " id="photos">
     <br>
     <br>
     <br>
@@ -34,8 +33,9 @@
 
         <div class=" white">
             <div class="card-image">
-                <img src="{{image_item.image_name.url}}" class="img">
-                <a class="btn" href="/image/{{image.description}}">view details</a>
+                <img src="{{image.photos.url}}" class="img">
+                <a class="btn" href="">view details</a>
+                <p>Here is it{{image.description}}</p>
             </div>
         </div>
 
