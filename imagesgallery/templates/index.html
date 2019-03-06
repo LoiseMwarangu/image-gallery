@@ -9,7 +9,7 @@
             <!-- loop through photos  -->
             {% for image in images %}
             <div class="col-md-4">
-                <a data-fancybox="gallery" href="{{image.photo.url}}" data-caption="{{image.photo.url}}">
+                <a data-fancybox="gallery" href="{{image.photo.url}}" data-caption="{{image.photo.url}} &nbsp; <br> {{image.description}} &nbsp; <br> {image.location}}">
                  <img src="{{image.photo.url}}" class="img-responsive image" style="height:400px; width:400px;">
                 </a>     
             </div>
