@@ -13,6 +13,9 @@ import django_heroku
 import dj_database_url
 from decouple import config,Csv
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False)
@@ -54,7 +57,7 @@ SECRET_KEY = 'q4v*m2+y0tsj8=gk_qva4h81%5bg9uo4t&!h!5-wa7)q_exep9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
