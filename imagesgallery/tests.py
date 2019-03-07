@@ -47,6 +47,7 @@ class ImageTestClass(TestCase):
     def test_delete_method(self):
         self.image.save_image()
         self.image.delete_image()
+        self.assertEqual(len(photos) == 0)
 
     def test_update_method(self):
         self.image.save_image()

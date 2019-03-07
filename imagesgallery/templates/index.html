@@ -1,4 +1,16 @@
 {% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static%}
+<head>
+    {% block styles %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'cssphotos/base.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />   
+    {% endblock %}
+
+</head>
 <body>
         {% block content %}
 
@@ -9,7 +21,7 @@
             <!-- loop through photos  -->
             {% for image in images %}
             <div class="col-md-4">
-                <a data-fancybox="gallery" href="{{image.photo.url}}" data-caption="{{image.photo.url}} &nbsp; <br> {{image.description}} &nbsp; <br> {image.location}}">
+                <a data-fancybox="images" href="{{image.photo.url}}" data-caption="{{image.photo.url}} &nbsp; <br> {{image.description}} &nbsp; <br> {image.location}}">
                  <img src="{{image.photo.url}}" class="img-responsive image" style="height:400px; width:400px;">
                 </a>     
             </div>
@@ -28,7 +40,15 @@
                     margin-left: 300px;
                 }
             </style>
-        
+     {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    
+    {% endblock %}       
         {% endblock %}   
 
 </body>

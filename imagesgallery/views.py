@@ -23,9 +23,3 @@ def search(request):
         return render(request, 'search.html',{"message":message})
     return render(request,"search.html")    
 
-def photo(request,image_id):
-    try:
-        image = Image.objects.get(id = id)
-    except DoesNotExist:
-        raise Http404()
-    return render(request,"index.html",{"image":image})
